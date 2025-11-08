@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/quizC.css">
+</head>
+<body>
+    <h1>Bem Vindo ao One Piece Quiz</h1><br><br>
+    <h2>Vamos Jogar?</h2><br>
+    <h2>Seram exibidas questões a respeito do anime One Piece, tenta acertar o maxímo possível, e prove ser um pirata de verdade</h2>
+    <h3>Qual o nome da ilha natal do Luffy?</h3>
+    <select id="select_q1">
+        <option onclick="verificar()" id="q1.1">Vodka Kingdom</option>
+        <option onclick="verificar()" id="q1.2">Dawn Island</option>
+        <option onclick="verificar()" id="q1.3">Drum Kingdom</option>
+        <option onclick="verificar()" id="q1.4">Fish-Men Island</option>
+    </select>
+    <h3>Qual o nome da fruta do Ace?</h3>
+    <select id="select_q2">
+        <option onclick="verificar()" id="q2.1">Mera-Mera no Mi</option>
+        <option onclick="verificar()" id="q2.2">Hito-Hito no Mi</option>
+        <option onclick="verificar()" id="q2.3">Soru-Soru no Mi</option>
+        <option onclick="verificar()" id="q2.4">Hana-Hana no Mi</option>
+    </select>
+    <h3>Qual a primeira ilha que a tripulação visita após entrar na Grand Line?</h3>
+    <select id="select_q3">
+        <option onclick="verificar()" id="q3.1">Alabasta</option>
+        <option onclick="verificar()" id="q3.2">Skypiea</option>
+        <option onclick="verificar()" id="q3.3">Whiskey Peak</option>
+        <option onclick="verificar()" id="q3.4">Baltigo</option>
+    </select>
+    <h3>O pai de Sanji era de uma organizaçaõ de cientistas com VegaPunk e Queen, qual o nome desse grupo?</h3>
+    <select id="select_q4">
+        <option onclick="verificar()" id="q4.1">Vinsmoke</option>
+        <option onclick="verificar()" id="q4.2">Sword</option>
+        <option onclick="verificar()" id="q4.3">Mads</option>
+        <option onclick="verificar()" id="q4.4">Tenkai</option>
+    </select>
+    <h3>Quem é o antigo usuario da fruta Jiki Jiki no MI</h3>
+    <select id="select_q5">
+        <option onclick="verificar()" id="q5.1">Captain John</option>
+        <option onclick="verificar()" id="q5.2">Rocks D Xebec</option>
+        <option onclick="verificar()" id="q5.3">King Harald</option>
+        <option onclick="verificar()" id="q5.4">Kozuki Oden</option>
+    </select>
+    <h3>No arco de EggHead, qual o nome do primeiro ancião que Luffy encontra?</h3>
+    <select id="select_q6">
+        <option onclick="verificar()" id="q6.1">Saint Marcus Mars</option>
+        <option onclick="verificar()" id="q6.2">Saint Ethebaron V. Nusjuro</option>
+        <option onclick="verificar()" id="q6.3">Saint JayGarcia Saturn</option>
+        <option onclick="verificar()" id="q6.4">Saint Ju Peter</option>
+    </select>
+    <h3>Em qual episodio luffy enocontra com Zoro?</h3>
+    <select id="select_q7">
+        <option onclick="verificar()" id="q7.1">Episodio 3</option>
+        <option onclick="verificar()" id="q7.2">Episodio 4</option>
+        <option onclick="verificar()" id="q7.3">Episodio 2</option>
+        <option onclick="verificar()" id="q7.4">Episodio 1</option>
+    </select>
+    <h3>Onde Kaido conseguiu sua fruta?</h3>
+    <select id="select_q8">
+        <option onclick="verificar()" id="q8.1">Na batalha cotra Barba Branca</option>
+        <option onclick="verificar()" id="q8.2">Em GodValley</option>
+        <option onclick="verificar()" id="q8.3">Com a Marinha</option>
+        <option onclick="verificar()" id="q8.4">Não é mostrado</option>
+    </select>
+    <h3>Em certas capas, Oda referencia cada tripulante com um animal. Qual é o animal de zoro?</h3>
+    <select id="select_q9">
+        <option onclick="verificar()" id="q9.1">Macaco</option>
+        <option onclick="verificar()" id="q9.2">Garça</option>
+        <option onclick="verificar()" id="q9.3">Tigre</option>
+        <option onclick="verificar()" id="q9.4">Leão</option>
+    </select>
+    <h3>Quem é o primeiro tripulante que Luffy encontra?</h3>
+    <select id="select_q10">
+        <option onclick="verificar()" id="q10.1">Ussop</option>
+        <option onclick="verificar()" id="q10.2">Sanji</option>
+        <option onclick="verificar()" id="q10.3">Zoro</option>
+        <option onclick="verificar()" id="q10.4">Nami</option>
+    </select>
+    <h3>Como se chama o elefante de carrega a ilha de Zou nas costas?</h3>
+    <select id="select_q11">
+        <option onclick="verificar()" id="q11.1">Nekomamushi</option>
+        <option onclick="verificar()" id="q11.2">Zunesha</option>
+        <option onclick="verificar()" id="q11.3">Jack</option>
+        <option onclick="verificar()" id="q11.4">Inuarashi</option>
+    </select>
+    <h3>Quais são os três tipos de haki</h3>
+    <select id="select_q12">
+        <option onclick="verificar()" id="q12.1">Haki do Rei, Obeservação e Endurecimento</option>
+        <option onclick="verificar()" id="q12.2">Haki da Força, Visualização e Armamento</option>
+        <option onclick="verificar()" id="q12.3">Haki dos Deuses, Observação e Armamento</option>
+        <option onclick="verificar()" id="q12.4">Haki do Rei, Obeservação e Armamento</option>
+    </select>
+    <h3>Qual o nome do clã de Oden</h3>
+    <select id="select_q13">
+        <option onclick="verificar()" id="q13.1">Hakari</option>
+        <option onclick="verificar()" id="q13.2">Shimotsuki</option>
+        <option onclick="verificar()" id="q13.3">Kozuki</option>
+        <option onclick="verificar()" id="q13.4">Kurozumi</option>
+    </select>
+    <h3>Quantos anos os tripulantes ficam separados duramte o time skip?</h3>
+    <select id="select_q14">
+        <option onclick="verificar()" id="q14.1">3 anos</option>
+        <option onclick="verificar()" id="q14.2">2 anos</option>
+        <option onclick="verificar()" id="q14.3">4 anos</option>
+        <option onclick="verificar()" id="q14.4">1 ano</option>
+    </select>
+    <h3>Quantos filhos a emporadora Big Mom tem?</h3>
+    <select id="select_q15">
+        <option onclick="verificar()" id="q15.1">80 filhos</option>
+        <option onclick="verificar()" id="q15.2">30 filhos</option>
+        <option onclick="verificar()" id="q15.3">90 filjos</option>
+        <option onclick="verificar()" id="q15.4">85 filhos</option>
+    </select>
+    <h3>Qual o nome de irmão gemeo de Shanks</h3>
+    <select id="select_q16">
+        <option onclick="verificar()" id="q16.1">Figarlanfd Garling</option>
+        <option onclick="verificar()" id="q16.2">Figarland Shamrock</option>
+        <option onclick="verificar()" id="q16.3">Figarland Mu</option>
+        <option onclick="verificar()" id="q16.4">Figarland Erin</option>
+    </select>
+    <h3>Como chama a tecnica de Imu-sama?</h3>
+    <select id="select_q17">
+        <option onclick="verificar()" id="q17.1">Ancestral Domain</option>
+        <option onclick="verificar()" id="q17.2">Domi Reversi</option>
+        <option onclick="verificar()" id="q17.3">Domain of the End</option>
+        <option onclick="verificar()" id="q17.4">Kamusari</option>
+    </select>
+
+
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+<script>
+    var mensagem = "";
+    var perguntas = [['Qual o nome da ilha natal do Luffy?',["Vodka Kingdom", "Dawn Island", "Drum Kingdom","Fish-Men Island"],2]];
+    [['Qual o nome da fruta do Ace?',["Mera-Mera no Mi","Hito-Hito no Mi","Soru-Soru no Mi","Hana-Hana no Mi"],1]]; 
+    [['Qual a primeira ilha que a tripulação visita após entrar na Grand Line?',["Alabasta","Skypiea","Whiskey Peak","Baltigoi"],3]]; 
+    [['O pai de Sanji era de uma organizaçaõ de cientistas com VegaPunk e Queen, qual o nome desse grupo?',["Vinsmoke","Sword","Mads","Tenkai"],3]]; 
+    [['Quem é o antigo usuario da fruta Jiki Jiki no MIo?',["Captain John","Rocks D Xebec","King Harald","Kozuki Oden"],3]]; 
+    var RespostaCerta = [];
+    var Respostas = [[]];
+    
+    [
+        {pergunta: "Qual o nome da ilha natal do Luffy?",
+        opcoes: ["Vodka Kingdom", "Dawn Island", "Drum Kingdom","Fish-Men Island"],
+        correta : 2},
+        
+        {pergunta: "Qual o nome da fruta do Ace?",
+        opcoes: ["Mera-Mera no Mi","Hito-Hito no Mi","Soru-Soru no Mi","Hana-Hana no Mi"],
+        correta : 1},
+        
+        {pergunta: "Qual a primeira ilha que a tripulação visita após entrar na Grand Line?",
+        opcoes: ["Alabasta","Skypiea","Whiskey Peak","Baltigo"],
+        correta : 3},
+        
+        {pergunta: "O pai de Sanji era de uma organizaçaõ de cientistas com VegaPunk e Queen, qual o nome desse grupo?",
+        opcoes: ["Vinsmoke","Sword","Mads","Tenkai"],
+        correta : 2},
+        
+        {pergunta: "Quem é o antigo usuario da fruta Jiki Jiki no MI",
+        opcoes: ["Captain John","Rocks D Xebec","King Harald","Kozuki Oden"],
+        correta : 1},
+        
+        {pergunta: "No arco de EggHead, qual o nome do primeiro ancião que Luffy encontra?",
+        opcoes: ["Saint Marcus Mars","Saint Ethebaron V. Nusjuro","Saint JayGarcia Saturn","Saint Ju Peter"],
+        correta : 3},
+        
+        
+        {pergunta: "Em qual episodio luffy enocontra com Zoro?",
+        opcoes : ["Episodio 3","Episodio 4","Episodio 2","Episodio 1"],
+        correta : 3},
+        
+        {pergunta: "Em qual episodio luffy enocontra com Zoro?",
+        opcoes: ["Vodka Kingdom", "Dawn Island", "Drum Kingdom","Fish-Men Island"],
+        correta : 2},
+    ]
+    function verificar(){
+        var resp1 = select_q1.value
+
+        if (resp1 == 'q1.2'){
+            mensagem = Acertou
+        }
+    }div_mensagem.innerHTML = mensagem
+
+</script>

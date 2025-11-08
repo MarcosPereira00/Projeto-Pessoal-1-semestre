@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Bem Vindo ao One Piece Quiz</h1><br><br>
+    <h2>Vamos Jogar?</h2><br>
+    <h2>Seram exibidas questões para saber como é a justiça para você!</h2>
+    <h3>Dentre as virtudes, qual você mais preza?</h3>
+    <select id="select_q1">
+        <option id="q1.1">Liberdade</option>
+        <option id="q1.2">Justiça</option>
+        <option id="q1.3">Altruismo</option>
+        <option id="q1.4">Coragem</option>
+        <button onclick="verificar()">Confirmar Resposta</button>
+    </select>
+    <h3>Em uma jornada pelos mares como One Piece, você prefere?</h3>
+    <select id="select_q2">
+        <option id="q2.1">Viver a vida em meio as ondas</option>
+        <option id="q2.2">Dedicar a vida a proteger os outros</option>
+        <option id="q2.3">Dedicar a vida a mudar o mundo</option>
+        <option id="q2.4">Ser um cidadão comum</option>
+    </select>
+    <h3></h3>
+    <select id="select_q3">
+        <option id="q3.1">Alabasta</option>
+        <option id="q3.2">Skypiea</option>
+        <option id="q3.3">Whiskey Peak</option>
+        <option id="q3.4">Baltigo</option>
+    </select>
+    <h3>O pai de Sanji era de uma organizaçaõ de cientistas com VegaPunk e Queen, qual o nome desse grupo?</h3>
+    <select id="select_q4">
+        <option id="q4.1">Vinsmoke</option>
+        <option id="q4.2">Sword</option>
+        <option id="q4.3">Mads</option>
+        <option id="q4.4">Tenkai</option>
+    </select>
+    <h3>Quem é o antigo usuario da fruta Jiki Jiki no MI</h3>
+    <select id="select_q5">
+        <option id="q5.1">Captain John</option>
+        <option id="q5.2">Rocks D Xebec</option>
+        <option id="q5.3">King Harald</option>
+        <option id="q5.4">Kozuki Oden</option>
+    </select>
+    <h3>No arco de EggHead, qual o nome do primeiro ancião que Luffy encontra?</h3>
+    <select id="select_q6">
+        <option id="q6.1">Saint Marcus Mars</option>
+        <option id="q6.2">Saint Ethebaron V. Nusjuro</option>
+        <option id="q6.3">Saint JayGarcia Saturn</option>
+        <option id="q6.4">Saint Ju Peter</option>
+    </select>
+    <h3>Em qual episodio luffy enocontra com Zoro?</h3>
+    <select id="select_q7">
+        <option id="q7.1">Episodio 3</option>
+        <option id="q7.2">Episodio 4</option>
+        <option id="q7.3">Episodio 2</option>
+        <option id="q7.4">Episodio 1</option>
+    </select>
+    <h3>Onde Kaido conseguiu sua fruta?</h3>
+    <select id="select_q8">
+        <option id="q8.1">Na batalha cotra Barba Branca</option>
+        <option id="q8.2">Em GodValley</option>
+        <option id="q8.3">Com a Marinha</option>
+        <option id="q8.4">Não é mostrado</option>
+    </select>
+    <h3>Em certas capas, Oda referencia cada tripulante com um animal. Qual é o animal de zoro?</h3>
+    <select id="select_q9">
+        <option id="q9.1">Macaco</option>
+        <option id="q9.2">Garça</option>
+        <option id="q9.3">Tigre</option>
+        <option id="q9.4">Leão</option>
+    </select>
+    <h3>Quem é o primeiro tripulante que Luffy encontra?</h3>
+    <select id="select_q10">
+        <option id="q10.1">Ussop</option>
+        <option id="q10.2">Sanji</option>
+        <option id="q10.3">Zoro</option>
+        <option id="q10.4">Nami</option>
+    </select>
+    <h3>Como se chama o elefante de carrega a ilha de Zou nas costas?</h3>
+    <select id="select_q11">
+        <option id="q11.1">Nekomamushi</option>
+        <option id="q11.2">Zunesha</option>
+        <option id="q11.3">Jack</option>
+        <option id="q11.4">Inuarashi</option>
+    </select>
+    <h3>Quais são os três tipos de haki</h3>
+    <select id="select_q12">
+        <option id="q12.1">Haki do Rei, Obeservação e Endurecimento</option>
+        <option id="q12.2">Haki da Força, Visualização e Armamento</option>
+        <option id="q12.3">Haki dos Deuses, Observação e Armamento</option>
+        <option id="q12.4">Haki do Rei, Obeservação e Armamento</option>
+    </select>
+    <h3>Qual o nome do clã de Oden</h3>
+    <select id="select_q13">
+        <option id="q13.1">Hakari</option>
+        <option id="q13.2">Shimotsuki</option>
+        <option id="q13.3">Kozuki</option>
+        <option id="q13.4">Kurozumi</option>
+    </select>
+    <h3>Quantos anos os tripulantes ficam separados duramte o time skip?</h3>
+    <select id="select_q14">
+        <option id="q14.1">3 anos</option>
+        <option id="q14.2">2 anos</option>
+        <option id="q14.3">4 anos</option>
+        <option id="q14.4">1 ano</option>
+    </select>
+    <h3>Quantos filhos a emporadora Big Mom tem?</h3>
+    <select id="select_q15">
+        <option id="q15.1">80 filhos</option>
+        <option id="q15.2">30 filhos</option>
+        <option id="q15.3">90 filjos</option>
+        <option id="q15.4">85 filhos</option>
+    </select>
+    <h3>Qual o nome de irmão gemeo de Shanks</h3>
+    <select id="select_q16">
+        <option id="q16.1">Figarlanfd Garling</option>
+        <option id="q16.2">Figarland Shamrock</option>
+        <option id="q16.3">Figarland Mu</option>
+        <option id="q16.4">Figarland Erin</option>
+    </select>
+    <h3>Como chama a tecnica de Imu-sama?</h3>
+    <select id="select_q17">
+        <option id="q17.1">Ancestral Domain</option>
+        <option id="q17.2">Domi Reversi</option>
+        <option id="q17.3">Domain of the End</option>
+        <option id="q17.4">Kamusari</option>
+    </select>
+
+
+    <div id="div_mensagem"></div>
+    
+    
+</body>
+</html>
