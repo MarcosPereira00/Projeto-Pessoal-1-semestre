@@ -8,7 +8,7 @@ body {
 /* Título */
 .titulo {
     text-align: center;
-    background-color: hsl(225, 8%, 91%); 
+    background-color: #3b0ca3; /* roxo tema */
     color: white;
     padding: 25px 0;
     font-size: 35px;
@@ -21,7 +21,7 @@ body {
     justify-content: center;
     gap: 35px;
     padding: 20px;
-    background-color: #d6c4ff;
+    background-color: #d6c4ff; /* roxo claro */
 }
 
 /* Links da navbar */
