@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="quizF.css">
 </head>
+
 <body>
     <h1>Bem Vindo ao One Piece Quiz</h1><br><br>
     <h2>Vamos Jogar?</h2><br>
@@ -15,124 +18,211 @@
         <option id="q1.2">Justiça</option>
         <option id="q1.3">Altruismo</option>
         <option id="q1.4">Coragem</option>
-        <button onclick="verificar()">Confirmar Resposta</button>
+
     </select>
     <h3>Em uma jornada pelos mares como One Piece, você prefere?</h3>
     <select id="select_q2">
         <option id="q2.1">Viver a vida em meio as ondas</option>
         <option id="q2.2">Dedicar a vida a proteger os outros</option>
         <option id="q2.3">Dedicar a vida a mudar o mundo</option>
-        <option id="q2.4">Ser um cidadão comum</option>
     </select>
-    <h3></h3>
+    <h3>Qual parte da vida mais de te agrada?</h3>
     <select id="select_q3">
-        <option id="q3.1">Alabasta</option>
-        <option id="q3.2">Skypiea</option>
-        <option id="q3.3">Whiskey Peak</option>
-        <option id="q3.4">Baltigo</option>
+        <option id="q3.1">A presença e companhia da familia</option>
+        <option id="q3.2">A aventura da vida</option>
+        <option id="q3.3">Tentar melhorar para as proximas gerações</option>
     </select>
-    <h3>O pai de Sanji era de uma organizaçaõ de cientistas com VegaPunk e Queen, qual o nome desse grupo?</h3>
+    <h3>Em uma situação de injustiça você tende a</h3>
     <select id="select_q4">
-        <option id="q4.1">Vinsmoke</option>
-        <option id="q4.2">Sword</option>
-        <option id="q4.3">Mads</option>
-        <option id="q4.4">Tenkai</option>
+        <option id="q4.1">Se colocar no lugar da pessoa e tomar uma ação</option>
+        <option id="q4.2">Se colocar no lugar da pessoa e refletir sobre o porque aquela situação acontece</option>
+        <option id="q4.3">Apenas ajudar</option>
     </select>
-    <h3>Quem é o antigo usuario da fruta Jiki Jiki no MI</h3>
+    <h3>O que é mais importante para você?</h3>
     <select id="select_q5">
-        <option id="q5.1">Captain John</option>
-        <option id="q5.2">Rocks D Xebec</option>
-        <option id="q5.3">King Harald</option>
-        <option id="q5.4">Kozuki Oden</option>
+        <option id="q5.1">Minha própria liberdade e dos que escolhem segui-la</option>
+        <option id="q5.2">A proteção das pessoas e manutenção da ordem</option>
+        <option id="q5.3">Garantir justiça para os oprimidos, mesmo contra a ordem</option>
     </select>
-    <h3>No arco de EggHead, qual o nome do primeiro ancião que Luffy encontra?</h3>
+    <h3>Você encontra um tesouro raro e valioso. O que faz com ele?</h3>
     <select id="select_q6">
-        <option id="q6.1">Saint Marcus Mars</option>
-        <option id="q6.2">Saint Ethebaron V. Nusjuro</option>
-        <option id="q6.3">Saint JayGarcia Saturn</option>
-        <option id="q6.4">Saint Ju Peter</option>
+        <option id="q6.1">Uso para realizar meus sonhos</option>
+        <option id="q6.2">Entrego para as autoridades</option>
+        <option id="q6.3">Uso para ajudar quem precisa</option>
+
     </select>
-    <h3>Em qual episodio luffy enocontra com Zoro?</h3>
+    <h3>Como você enxerga a hierarquia?</h3>
     <select id="select_q7">
-        <option id="q7.1">Episodio 3</option>
-        <option id="q7.2">Episodio 4</option>
-        <option id="q7.3">Episodio 2</option>
-        <option id="q7.4">Episodio 1</option>
+        <option id="q7.1">Algo que limita quem sou</option>
+        <option id="q7.2">Fundamental para manter ordem</option>
+        <option id="q7.3">Uma ferramenta — pode ser usada para o bem ou para o mal</option>
     </select>
-    <h3>Onde Kaido conseguiu sua fruta?</h3>
+    <h3>Qual frase mais combina com você?</h3>
     <select id="select_q8">
-        <option id="q8.1">Na batalha cotra Barba Branca</option>
-        <option id="q8.2">Em GodValley</option>
-        <option id="q8.3">Com a Marinha</option>
-        <option id="q8.4">Não é mostrado</option>
+        <option id="q8.1">"A justiça é soberana!"</option>
+        <option id="q8.2">'A paz deve ser protegida."</option>
+        <option id="q8.3">"Quero viver minha vida livre"</option>
     </select>
-    <h3>Em certas capas, Oda referencia cada tripulante com um animal. Qual é o animal de zoro?</h3>
+    <h3>Você testemunha alguém sendo abusado por uma autoridade poderosa</h3>
+    <h2>O que te move a agir primeiro?</h2>
     <select id="select_q9">
-        <option id="q9.1">Macaco</option>
-        <option id="q9.2">Garça</option>
-        <option id="q9.3">Tigre</option>
-        <option id="q9.4">Leão</option>
+        <option id="q9.1">O medo do caos que isso pode gerar</option>
+        <option id="q9.2">A raiva por controlarem os outros</option>
+        <option id="q9.3">O senso de justiça negada</option>
     </select>
-    <h3>Quem é o primeiro tripulante que Luffy encontra?</h3>
+    <h3>O mundo ideal seria…</h3>
     <select id="select_q10">
-        <option id="q10.1">Ussop</option>
-        <option id="q10.2">Sanji</option>
-        <option id="q10.3">Zoro</option>
-        <option id="q10.4">Nami</option>
+        <option id="q10.1">Um onde todos sigam princípios e a paz seja mantida.</option>
+        <option id="q10.2">Um onde todos tenham força e voz para mudar o que é errado.</option>
+        <option id="q10.3">Um onde cada pessoa busque seus sonhos sem restrições.</option>
+
     </select>
-    <h3>Como se chama o elefante de carrega a ilha de Zou nas costas?</h3>
+    <h3>O que você valoriza mais em sua tripulação / aliados?</h3>
     <select id="select_q11">
-        <option id="q11.1">Nekomamushi</option>
-        <option id="q11.2">Zunesha</option>
-        <option id="q11.3">Jack</option>
-        <option id="q11.4">Inuarashi</option>
+        <option id="q11.1">Disciplina e hierarquia</option>
+        <option id="q11.2">União pela causa e igualdade</option>
+        <option id="q11.3">Lealdade entre pessoas que escolheram estar juntas</option>
+
     </select>
-    <h3>Quais são os três tipos de haki</h3>
+    <h3>Um superior lhe dá uma ordem que você considera moralmente errada. O que faz?</h3>
     <select id="select_q12">
-        <option id="q12.1">Haki do Rei, Obeservação e Endurecimento</option>
-        <option id="q12.2">Haki da Força, Visualização e Armamento</option>
-        <option id="q12.3">Haki dos Deuses, Observação e Armamento</option>
-        <option id="q12.4">Haki do Rei, Obeservação e Armamento</option>
+        <option id="q12.1">Cumpro — minha opinião não pode atrapalhar o bem maior.</option>
+        <option id="q12.2">Questiono e, se necessário, desobedeço para impedir injustiças.</option>
+        <option id="q12.3">Ignoro — quem manda em mim sou eu</option>
+
     </select>
-    <h3>Qual o nome do clã de Oden</h3>
+    <h3>Há um protesto na sua cidade contra o governo. Você…</h3>
     <select id="select_q13">
-        <option id="q13.1">Hakari</option>
-        <option id="q13.2">Shimotsuki</option>
-        <option id="q13.3">Kozuki</option>
-        <option id="q13.4">Kurozumi</option>
+        <option id="q13.1">Mantém distância e prioriza estabilidade e segurança.</option>
+        <option id="q13.2">Participa ativamente se acreditar na causa.</option>
+        <option id="q13.3">Só iria se puder transformar em festa e aventura</option>
     </select>
-    <h3>Quantos anos os tripulantes ficam separados duramte o time skip?</h3>
+    <h3>Um negócio local está quase fechando:</h3>
     <select id="select_q14">
-        <option id="q14.1">3 anos</option>
-        <option id="q14.2">2 anos</option>
-        <option id="q14.3">4 anos</option>
-        <option id="q14.4">1 ano</option>
+        <option id="q14.1">Apoio se estiver dentro das regras e da lei</option>
+        <option id="q14.2">Organizo uma campanha para salvar o comércio</option>
+        <option id="q14.3">Chamo geral para ir lá gastar junto e festejar</option>
     </select>
-    <h3>Quantos filhos a emporadora Big Mom tem?</h3>
+    <h3>Um professor trata um aluno injustamente:</h3>
     <select id="select_q15">
-        <option id="q15.1">80 filhos</option>
-        <option id="q15.2">30 filhos</option>
-        <option id="q15.3">90 filjos</option>
-        <option id="q15.4">85 filhos</option>
+        <option id="q15.1">Reporto aos responsáveis para corrigir a situação</option>
+        <option id="q15.2">Defendo e protesto contra o tratamento injusto</option>
+        <option id="q15.3">Peito o professor sem medo</option>
     </select>
-    <h3>Qual o nome de irmão gemeo de Shanks</h3>
+    <h3>Durante uma viagem, você precisa escolher sua rota:</h3>
     <select id="select_q16">
-        <option id="q16.1">Figarlanfd Garling</option>
-        <option id="q16.2">Figarland Shamrock</option>
-        <option id="q16.3">Figarland Mu</option>
-        <option id="q16.4">Figarland Erin</option>
+        <option id="q16.1">A mais segura, para proteger todos a bordo</option>
+        <option id="q16.2">A que leva a ajudar quem precisa, mesmo sendo difícil</option>
+        <option id="q16.3">A mais desafiadora e cheia de perigos — vale a aventura!</option>
+
     </select>
-    <h3>Como chama a tecnica de Imu-sama?</h3>
+    <h3>Sua família quer escolher seu futuro profissional</h3>
     <select id="select_q17">
-        <option id="q17.1">Ancestral Domain</option>
-        <option id="q17.2">Domi Reversi</option>
-        <option id="q17.3">Domain of the End</option>
-        <option id="q17.4">Kamusari</option>
+        <option id="q17.1">Tento conciliar o que quero com o que é esperado</option>
+        <option id="q17.2">Provo que minha escolha pode gerar impacto positivo</option>
+        <option id="q17.3">Faço o que quero e pronto — minha vida, minhas regras</option>
     </select>
+    <button onclick="verificar()">Confirmar Resposta</button>
 
 
     <div id="div_mensagem"></div>
-    
-    
+
+
 </body>
+
 </html>
+<script>
+    var Perguntas = [
+        {
+            pergunta: 'Em uma jornada pelos mares como One Piece, você prefere?',
+            alternativa1: "Liberdade",
+            alternativa2: "Justiça",
+            alternativa3: "Altruimo",
+            alternativa4: "Coragem"
+
+        },
+        {
+            pergunta: 'Qual parte da vida mais de te agrada?',
+            alternativa1: "Viver a vida em meio as ondas",
+            alternativa2: "Dedicar a vida a proteger os outros",
+            alternativa3: "Dedicar a vida a mudar o mundo",
+
+        },
+
+        {
+            pergunta: 'Em uma situação de injustiça você tende a',
+            alternativa1: "Se colocar no lugar da pessoa e tomar uma ação",
+            alternativa2: "Se colocar no lugar da pessoa e refletir sobre o porque aquela situação acontece",
+            alternativa3: "Apenas ajudo"
+
+        },
+        {
+            pergunta: 'O que é mais importante para você?',
+            alternativa1: "Minha própria liberdade e dos que escolhem segui-la",
+            alternativa2: "A proteção das pessoas e manutenção da ordem",
+            alternativa3: "Garantir justiça para os oprimidos, mesmo contra a ordem"
+
+        },
+        {
+            pergunta: 'Você encontra um tesouro raro e valioso. O que faz com ele?',
+            alternativa1: "Uso para realizar meus sonhos",
+            alternativa2: "Entrego para as autoridades",
+            alternativa3: "Uso para ajudar quem precisa",
+
+        },
+
+        {
+            pergunta: 'Como você enxerga a hierarquia?',
+            alternativa1: "Algo que limita quem sou",
+            alternativa2: "Fundamental para manter ordem",
+            alternativa3: "Uma ferramenta — pode ser usada para o bem ou para o mal",
+
+        },
+        {
+            pergunta: 'Qual frase mais combina com você?',
+            alternativa1: "A justiça é soberana!",
+            alternativa2: "A paz deve ser protegida",
+            alternativa3: "Quero viver minha vida livre",
+        },
+        {
+            pergunta: 'Você testemunha alguém sendo abusado por uma autoridade poderosa',
+            alternativa1: "O medo do caos que isso pode gerar",
+            alternativa2: "A raiva por controlarem os outros",
+            alternativa3: "O senso de justiça negada",
+        },
+        {
+            pergunta: 'O mundo ideal seria…',
+            alternativa1: "Um onde todos sigam princípios e a paz seja mantida.",
+            alternativa2: "Um onde todos tenham força e voz para mudar o que é errado.",
+            alternativa3: "Um onde cada pessoa busque seus sonhos sem restrições.",
+        },
+        {
+            pérgunta: 'O que você valoriza mais em sua tripulação / aliados?',
+            alternativa1: "",
+            alternativa2: "",
+            alternativa3: "",
+        },
+        {
+            pergunta: 'Um superior lhe dá uma ordem que você considera moralmente errada. O que faz?',
+            alternativa1: "Uso para realizar meus sonhos",
+            alternativa2: "Entrego para as autoridades",
+            alternativa3: "Uso para ajudar quem precisa",
+        },
+        {
+            pergunta: 'Há um protesto na sua cidade contra o governo. Você…', 
+            alternativa1: "Uso para realizar meus sonhos",
+            alternativa2: "Entrego para as autoridades",
+            alternativa3: "Uso para ajudar quem precisa",
+        },
+        {pergunta:'Um negócio local está quase fechando:',
+
+        },
+        {}
+    ];
+    var Respostas = [];
+
+
+
+
+
+</script>
