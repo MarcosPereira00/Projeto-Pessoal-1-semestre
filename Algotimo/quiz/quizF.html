@@ -138,7 +138,6 @@
             alternativa1: "Liberdade",
             alternativa2: "Justiça",
             alternativa3: "Altruimo",
-            alternativa4: "Coragem"
 
         },
         {
@@ -198,26 +197,140 @@
         },
         {
             pérgunta: 'O que você valoriza mais em sua tripulação / aliados?',
-            alternativa1: "",
-            alternativa2: "",
-            alternativa3: "",
+            alternativa1: "Disciplina e hierarquia",
+            alternativa2: "União pela causa e igualdade",
+            alternativa3: "Lealdade entre pessoas que escolheram estar juntas",
         },
         {
             pergunta: 'Um superior lhe dá uma ordem que você considera moralmente errada. O que faz?',
-            alternativa1: "Uso para realizar meus sonhos",
-            alternativa2: "Entrego para as autoridades",
-            alternativa3: "Uso para ajudar quem precisa",
+            alternativa1: "Cumpro — minha opinião não pode atrapalhar o bem maior.",
+            alternativa2: "Questiono e, se necessário, desobedeço para impedir injustiças",
+            alternativa3: "Ignoro — quem manda em mim sou eu",
         },
         {
-            pergunta: 'Há um protesto na sua cidade contra o governo. Você…', 
-            alternativa1: "Uso para realizar meus sonhos",
-            alternativa2: "Entrego para as autoridades",
-            alternativa3: "Uso para ajudar quem precisa",
+            pergunta: 'Há um protesto na sua cidade contra o governo. Você…',
+            alternativa1: "Mantém distância e prioriza estabilidade e segurança",
+            alternativa2: "Participa ativamente se acreditar na causa",
+            alternativa3: "Só iria se puder transformar em festa e aventura",
         },
-        {pergunta:'Um negócio local está quase fechando:',},
-        
+        {
+            pergunta: 'Um negócio local está quase fechando:',
+            alternativa1: "Apoio se estiver dentro das regras e da lei",
+            alternativa2: "Organizo uma campanha para salvar o comércio",
+            alternativa3: "Chamo geral para ir lá gastar junto e festejar",
+        },
+        {
+            pergunta: 'Um professor trata um aluno injustamente',
+            alternativa1: "Reporto aos responsáveis para corrigir a situação",
+            alternativa2: "Defendo e protesto contra o tratamento injust",
+            alternativa3: "Peito o professor sem medo",
+        },
+        {
+            pergunta: 'Durante uma viagem, você precisa escolher sua rota:',
+            alternativa1: "A mais segura, para proteger todos a bordo",
+            alternativa2: "A que leva a ajudar quem precisa, mesmo sendo difícil",
+            alternativa3: "A mais desafiadora e cheia de perigos — vale a aventura!",
+        },
+        {
+            pergunta: 'Sua família quer escolher seu futuro profissional',
+            alternativa1: "Tento conciliar o que quero com o que é esperado",
+            alternativa2: "Provo que minha escolha pode gerar impacto positivo",
+            alternativa3: "Faço o que quero e pronto — minha vida, minhas regras",
+        }
+
     ];
-    var Respostas = [];
+    var RespostasPirata = [
+        "Liberdade",
+        "Viver a vida em meio as ondas",
+        "Apenas ajudo",
+        "Minha própria liberdade e dos que escolhem segui-la",
+        "Uso para realizar meus sonhos",
+        "Algo que limita quem sou",
+        "Quero viver minha vida livre",
+        "A raiva por controlarem os outros",
+        "O senso de justiça negada",
+        "Um onde cada pessoa busque seus sonhos sem restrições.",
+        "Lealdade entre pessoas que escolheram estar juntas",
+        "Ignoro — quem manda em mim sou eu",
+        "Só iria se puder transformar em festa e aventura",
+        "Chamo geral para ir lá gastar junto e festejar",
+        "Peito o professor sem medo",
+        "A mais desafiadora e cheia de perigos — vale a aventura!",
+        "Faço o que quero e pronto — minha vida, minhas regras"
+
+
+    ];
+    var RespostasMarinha = [
+        "Justiça",
+        "Dedicar a vida a proteger os outros",
+        "Se colocar no lugar da pessoa e tomar uma ação",
+        "A proteção das pessoas e manutenção da ordem",
+        "Entrego para as autoridades",
+        "Fundamental para manter ordem",
+        "A paz deve ser protegida",
+        "O medo do caos que isso pode gerar",
+        "Um onde todos sigam princípios e a paz seja mantida.",
+        "Disciplina e hierarquia",
+        "Cumpro — minha opinião não pode atrapalhar o bem maior.",
+        "Mantém distância e prioriza estabilidade e segurança",
+        "Apoio se estiver dentro das regras e da lei",
+        "Reporto aos responsáveis para corrigir a situação",
+        "A mais segura, para proteger todos a bordo",
+        "Tento conciliar o que quero com o que é esperado"
+
+    ];
+    var RespostasRevolucionarios = [
+        "Altruimo",
+        "Dedicar a vida a mudar o mundo",
+        "Se colocar no lugar da pessoa e refletir sobre o porque aquela situação acontece",
+        "Garantir justiça para os oprimidos, mesmo contra a ordem",
+        "Uso para ajudar quem precisa",
+        "Uma ferramenta — pode ser usada para o bem ou para o mal",
+        "A justiça é soberana!",
+        "A raiva por controlarem os outros",
+        "A raiva por controlarem os outros",
+        "Um onde todos tenham força e voz para mudar o que é errado.",
+        "União pela causa e igualdade",
+        "Questiono e, se necessário, desobedeço para impedir injustiças",
+        "Participa ativamente se acreditar na causa",
+        "Organizo uma campanha para salvar o comércio",
+        "Defendo e protesto contra o tratamento injust",
+        "A que leva a ajudar quem precisa, mesmo sendo difícil",
+        "Provo que minha escolha pode gerar impacto positivo"
+
+    ];
+
+
+    var resposta = [0, 0, 0]; // [pirata, marinha, revolucionário]
+
+
+
+function verificar(){
+
+if (resposta == "pirata") {
+    resposta[0] = resposta[0] + 1;
+}
+else if (resposta == "marinha") {
+    resposta[1] = resposta[1] + 1;
+}
+else (resposta == "revolucionario") {
+    resposta[2] = resposta[2] + 1;
+}
+
+
+if (resposta [0] > resposta [1,2]){
+    mensagem = 'Você é pirata'
+}
+else if (resposta [1] > resposta [1,2]){
+    mensagem = 'Você é pirata'
+}
+else{
+    mensagem = 'Você é pirata'
+}
+}
+
+
+
 
 
 
