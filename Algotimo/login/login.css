@@ -4,7 +4,7 @@ header{
 }
 header .container{
     display: flex;
-    background-color: #DFCD9E;
+    background-color: #5879fc;
     justify-content: space-between;
     padding: 0 0px;
     align-items: center;
@@ -41,7 +41,7 @@ header .container .navbar li a:hover{
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
-  background-color: #fef7e6;
+  background-color: #b0b5fd;
   display: flex;
   /* justify-content: center; */
   width: 100%;
@@ -68,6 +68,9 @@ body {
   align-items: center;
   flex-direction: column;
   margin-bottom: 30px;
+  background-image: url('LvK.gif');
+ background-repeat: no-repeat;
+ background-size: cover;
 }
 
 /* IMAGENS  */

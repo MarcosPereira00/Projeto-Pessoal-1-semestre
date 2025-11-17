@@ -50,9 +50,10 @@ html{
     display: flex;
     height: 655px;
     width: 100%;
-    background-image: url('image.png');
+    background-image: url('paisagem-navio.png');
     background-size: cover;
 }
+
 
 /* COMEÇO LADO ESQUERDO DO BANNER */
 .container-banner .banner-texto{
@@ -171,21 +172,25 @@ body .sobreOnePiece img{
 
 
 .comofunciona .comofunciona-banner .boxes .icon{
-    height: 40px;
+    height: 70%;
    margin-bottom: 20px;
+    background-size: cover;
+    width: 40px;
+
+    
 }
 .comofunciona .comofunciona-banner .boxes{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+   
 
     
 }
 
-.comofunciona .comofunciona-banner .boxes .box{
-    width: 270px;
-    height: 140px;
-    background-color: #3b1bc9;
+/*.comofunciona .comofunciona-banner .boxes .box{
+    width: 200px;
+    height: 100px;
     margin: 10px;
     display: flex;
     justify-content: space-evenly;
@@ -195,12 +200,49 @@ body .sobreOnePiece img{
     display: flex;
     flex-direction: column;
     align-items:center;
+} */
+.comofunciona .comofunciona-banner .boxes .box1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 17px;
+    background-image: url('onepiece.gif');
+    background-size: cover;
+    height: 150px;
+    width: 345px;
+}
+.comofunciona .comofunciona-banner .boxes .box2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 17px;
+    background-image: url('haki.gif');
+    background-size: cover;
+    height: 150px;
+    width: 345px;
+}
+.comofunciona .comofunciona-banner .boxes .box3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 17px;
+    background-image: url('ace-luffy.gif');
+    background-size: cover;
+    height: 150px;
+    width: 345px;
+}
+.comofunciona .comofunciona-banner .boxes .box4 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 17px;
+    background-image: url('mugiwara.gif');
+    background-size: cover;
+    height: 150px;
+    width: 345px;
 }
 .comofunciona .comofunciona-banner .boxes .box p{
     text-align: center;
     margin-bottom: 30px;
     font-size: 17px;
 }
+
 .comofunciona .comofunciona-banner .boxes .box .numero{
     font-size: 18px;
     font-weight: bold;
@@ -263,7 +305,7 @@ body .sobreOnePiece img{
 
 /* FIM POR QUE ESCOLHER */
 
-.calculadora{
+.quiz{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -271,30 +313,34 @@ body .sobreOnePiece img{
     height: 700px;
 }
 
-.calculadora .calculadora-banner{
+.quiz .quiz-banner{
     margin-top: 90px;
     display: flex;
     height: 350px;
-    background-image:url(https://alphacoders.com/one-piece-gifs) ;
+    background-image:url('pickinghat.gif') ;
     padding: 50px;
     width: 1000px;
     justify-content: space-evenly;
     align-items: flex-start;
     border-radius: 10px;
+    background-size: cover;
+    
 }
-.calculadora .calculadora-banner .texto li{
+.quiz .quiz-banner .texto li{
     margin: 40px;
     font-size: 23px;
+    color: white;
 }
 
 
-.calculadora .calculadora-banner .img{
+.quiz .quiz-banner .img{
     display: flex;
     flex-direction: column;
     align-items: center;
+   
 }
 
-.calculadora .calculadora-banner .img button{
+.quiz .quiz-banner .img button{
     height: 70px;
     width: 250px;
     border-radius: 10px;
@@ -306,8 +352,8 @@ body .sobreOnePiece img{
     transition: 0.5s;
 }
 
-.calculadora .calculadora-banner .img button:hover{
-    background-color:rgb(251, 251, 12);
+.quiz .quiz-banner .img button:hover{
+    background-color:rgb(78, 14, 241);
     color: black;
     transition: 0.5s;
     cursor: pointer;
@@ -315,10 +361,10 @@ body .sobreOnePiece img{
 }
 
 
-.calculadora .calculadora-banner .img img{
+.quiz .quiz-banner .img img{
     height: 270px;
 }
-/* FIM CALCULADORA */
+/* FIM DO QUIZ */
 
 /* COMECO EQUIPE */
 
@@ -456,7 +502,7 @@ footer .icons .icon img{
 footer .textos {
     display: flex;
     align-items: flex-start;
-    margin: 20  px;
+    margin: 20px;
 }
 
 footer .textos .texto{
