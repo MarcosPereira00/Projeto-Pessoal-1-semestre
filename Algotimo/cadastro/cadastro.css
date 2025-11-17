@@ -1,7 +1,7 @@
 body{
     display: flex;
     justify-content: center;
-    background-color: #FEF7E6;
+   
     font-family: 'Montserrat';
     justify-content: center;
     flex-direction: column;
@@ -17,7 +17,7 @@ header{
 }
 header .container{
     display: flex;
-    background-color: #DFCD9E;
+    background-color:rgb(194, 150, 235);
     justify-content: space-between;
     padding: 0 0px;
     align-items: center;
@@ -50,17 +50,41 @@ header .container .navbar li a:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-self: center;
+    background-image: url('crew.gif');
+    background-size: cover;
+    width: 100%;
+    justify-content: center;
+    height: 100%;
+    
 }
-.main .container{
+.container h3{
+    color: white;
+    size: 100px;
+}
+
+/*.main .container{
     background-size: 589px;
     background-repeat: no-repeat;
     background-position: 50%;
     
-}
+
+    
+}*/
+/*
 .main img{
     height: 139px;
     width: 130px;
     margin-top: 30px;
+    
+    
+}*/
+
+.container .campos{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -72,12 +96,13 @@ header .container .navbar li a:hover{
     flex-direction: column;
     width: 800px;
     height: 850px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     align-items: center;
     border-radius: 15px;
     margin-top: 30px;
+    margin-bottom: 30px;
+    justify-content: center;
     
- margin-bottom: 30px;
     
 }
 .main .campos{
@@ -92,7 +117,7 @@ header .container .navbar li a:hover{
 }
 .main .campos .cabecalho{
     font-size: 15px;
-    color: black;
+    color: white;
       font-weight: bold;
         margin-block-start: 1em;
   margin-block-end: 1em;
@@ -142,6 +167,9 @@ button:hover {
     margin: 8px;
     gap: 10px;
 
+}
+p.cabecalho{
+    color: black;
 }
 
 .main .container h3{
