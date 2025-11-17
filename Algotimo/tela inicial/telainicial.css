@@ -6,7 +6,7 @@
 /* INICIO HEADER */
 header .container{
     display: flex;
-    background-color: #1a3b7d;
+    background-color: rgb(37, 46, 73);
     backdrop-filter: blur(10px);
     justify-content: space-between;
     padding: 0 20px;
@@ -50,7 +50,7 @@ html{
     display: flex;
     height: 655px;
     width: 100%;
-    background-image: url('one\ piece\ crew.jpg');
+    background-image: url('image.png');
     background-size: cover;
 }
 
@@ -61,7 +61,7 @@ html{
     flex-direction: column;
     align-items: center;
     padding: 100px;
-    color: black;
+    color: bold black;
     
 }
 
@@ -78,7 +78,7 @@ html{
     border-style: none;
 }
 .container-banner .banner-texto button:hover{
-    background-color: rgb(251, 251, 12);
+    background-color: rgb(206, 127, 235);
     color: black;
     width: 370px;
     height: 80px;
@@ -185,7 +185,7 @@ body .sobreOnePiece img{
 .comofunciona .comofunciona-banner .boxes .box{
     width: 270px;
     height: 140px;
-    background-color: #F6C84B;
+    background-color: #3b1bc9;
     margin: 10px;
     display: flex;
     justify-content: space-evenly;
@@ -275,7 +275,7 @@ body .sobreOnePiece img{
     margin-top: 90px;
     display: flex;
     height: 350px;
-    background-color: #F9F0D9;
+    background-image:url(https://alphacoders.com/one-piece-gifs) ;
     padding: 50px;
     width: 1000px;
     justify-content: space-evenly;
