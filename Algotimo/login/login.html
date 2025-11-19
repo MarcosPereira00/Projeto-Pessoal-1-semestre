@@ -9,6 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <script src="./js/sessao.js"></script>
     
   </head>
 
@@ -25,8 +26,8 @@
   </header>
   <div class="main">
       <div class="container">
-        
-    
+        <img src="" alt="" id="img_logo" />
+        <img src="LvK.gif" alt="" id="img_fundo" />
 
         <h3>LOGIN</h3>
         <div class="campos">
@@ -36,7 +37,7 @@
               <input
                 type="text"
                 placeholder="Insira seu email"
-                id="input_usuario"
+                id="input_email"
               />
             </div>
 
@@ -61,34 +62,75 @@
   </body>
 </html>
 <script>
-  // vetor de um usuario já registrado
-  var usuarioRegistrado = ["beetech@sptech.school", "Beetech#2025"];
-  //[0]-usuario/email
-  //[1] senha
-  var contTentativas = 3;
-  var logado = false;
 
-  function logar() {
-    var usuario = input_usuario.value;
-    var senha = input_senha.value;
 
-    while (contTentativas > 0 && logado == false) {
-      if (usuarioRegistrado.includes(usuario)) {
-        if (usuarioRegistrado[1] == senha) {
-          div_mensagem.innerHTML = "<b style='color:green'>Login realizado com sucesso!</b>";
-          logado = true;
-        } else {
-          contTentativas--;
-          if (contTentativas > 0) {
-            div_mensagem.innerHTML = `<b style="color:red">Senha inválida, tentativa(s) restante(s): ${contTentativas}</b>`;
-          } else {
-            div_mensagem.innerHTML = "<b style='color:red'>Login bloqueado!</b>";
-          }
+    function entrar() {
+        aguardar();
+
+        var emailVar = input_email.value;
+        var senhaVar = input_senha.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
         }
-      } else {
-        div_mensagem.innerHTML = "<b style='color:red'>Usuário inválido.</b>";
-        contTentativas = 0;
-      }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+                    
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
     }
-  }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
 </script>

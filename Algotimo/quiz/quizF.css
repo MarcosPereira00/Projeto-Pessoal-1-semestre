@@ -1,58 +1,21 @@
-body{
-    background: #001e4d;
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
 }
-.cabecalho{
-    background: #fff;
-    width: 90%;
-    max-width: 600px;
-    margin: 100px auto 0;
-    border-radius: 10px;
-    padding: 30px;
-}
-.cabecalho h1{
-    font-size: 25px;
-    color: #001e4d;
-    font-weight: 600;
-    border-bottom: 1px solid #333;
-    padding: bottom 30px;
-}
-
-.quiz{
-    padding: 20px 0;
-}
-.quiz h2{
-    font-size: 18px;
-    color: #001e4d;
-    font-weight:600 ;
-}
-
-.resposta{
-    background: #fff;
-    color: #222;
-    font-weight: 500;
+header .container{
+    display: flex;
+    background-color: rgb(37, 46, 73);
+    backdrop-filter: blur(10px);
+    justify-content: space-between;
+    padding: 0 20px;
+    align-items: center;
+    height: 75px;
+    position: fixed;
     width: 100%;
-    border: 1px solid #222;
-    padding: 10px;
-    margin: 10px 0;
-    text-align: left;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s;
+    
+    
 }
-.resposta:hover{
-    background: #222;
-    color: #fff;
-
-
-}
-.confirmar-resposta{
- background: #001e4d;
- color:#fff ;
- font-weight: 500;
- width: 150px;
- border:0;
- padding: 10px;
- margin: 20px auto 0;
- border-radius: 4px;
- display:none ;
+header .container .navabar{
+    display: flex;
 }
