@@ -231,201 +231,137 @@
 </html>
 <script>
     var Perguntas = [
-        {
-            pergunta: 'Em uma jornada pelos mares como One Piece, você prefere?',
-            alternativaPirata: "Liberdade",
-            alternativaMarinha: "Justiça",
-            alternativaRevolucionarios: "Altruimo",
+    { pergunta: "Dentre as virtudes, qual você mais preza?", alternativas: ["Liberdade", "Justiça", "Altruismo"] },
+    { pergunta: "Em uma jornada pelos mares como One Piece, você prefere?", alternativas: ["Viver a vida em meio as ondas", "Dedicar a vida a proteger os outros", "Dedicar a vida a mudar o mundo"] },
+    { pergunta: "Qual parte da vida mais de te agrada?", alternativas: ["A presença e companhia da familia", "A aventura da vida", "Tentar melhorar para as proximas gerações"] },
+    { pergunta: "Em uma situação de injustiça você tende a", alternativas: ["Se colocar no lugar da pessoa e tomar uma ação", "Se colocar no lugar da pessoa e refletir sobre o porque aquela situação acontece", "Apenas ajudar"] },
+    { pergunta: "O que é mais importante para você?", alternativas: ["Minha própria liberdade e dos que escolhem segui-la", "A proteção das pessoas e manutenção da ordem", "Garantir justiça para os oprimidos, mesmo contra a ordem"] },
+    { pergunta: "Você encontra um tesouro raro e valioso. O que faz com ele?", alternativas: ["Uso para realizar meus sonhos", "Entrego para as autoridades", "Uso para ajudar quem precisa"] },
+    { pergunta: "Como você enxerga a hierarquia?", alternativas: ["Algo que limita quem sou", "Fundamental para manter ordem", "Uma ferramenta — pode ser usada para o bem ou para o mal"] },
+    { pergunta: "Qual frase mais combina com você?", alternativas: ["A justiça é soberana!", "A paz deve ser protegida.", "Quero viver minha vida livre"] },
+    { pergunta: "Você testemunha alguém sendo abusado por uma autoridade poderosa", alternativas: ["O medo do caos que isso pode gerar", "A raiva por controlarem os outros", "O senso de justiça negada"] },
+    { pergunta: "O mundo ideal seria…", alternativas: ["Um onde todos sigam princípios e a paz seja mantida.", "Um onde todos tenham força e voz para mudar o que é errado.", "Um onde cada pessoa busque seus sonhos sem restrições."] },
+    { pergunta: "O que você valoriza mais em sua tripulação / aliados?", alternativas: ["Disciplina e hierarquia", "União pela causa e igualdade", "Lealdade entre pessoas que escolheram estar juntas"] },
+    { pergunta: "Um superior lhe dá uma ordem que você considera moralmente errada. O que faz?", alternativas: ["Cumpro — minha opinião não pode atrapalhar o bem maior.", "Questiono e, se necessário, desobedeço para impedir injustiças.", "Ignoro — quem manda em mim sou eu"] },
+    { pergunta: "Há um protesto na sua cidade contra o governo. Você…", alternativas: ["Mantém distância e prioriza estabilidade e segurança.", "Participa ativamente se acreditar na causa.", "Só iria se puder transformar em festa e aventura"] },
+    { pergunta: "Um negócio local está quase fechando:", alternativas: ["Apoio se estiver dentro das regras e da lei", "Organizo uma campanha para salvar o comércio", "Chamo geral para ir lá gastar junto e festejar"] },
+    { pergunta: "Um professor trata um aluno injustamente:", alternativas: ["Reporto aos responsáveis para corrigir a situação", "Defendo e protesto contra o tratamento injusto", "Peito o professor sem medo"] },
+    { pergunta: "Durante uma viagem, você precisa escolher sua rota:", alternativas: ["A mais segura, para proteger todos a bordo", "A que leva a ajudar quem precisa, mesmo sendo difícil", "A mais desafiadora e cheia de perigos — vale a aventura!"] },
+    { pergunta: "Sua família quer escolher seu futuro profissional", alternativas: ["Tento conciliar o que quero com o que é esperado", "Provo que minha escolha pode gerar impacto positivo", "Faço o que quero e pronto — minha vida, minhas regras"] }
+];
 
-        },
-        {
-            pergunta: 'Qual parte da vida mais de te agrada?',
-            alternativaPirata: "Viver a vida em meio as ondas",
-            alternativaMarinha: "Dedicar a vida a proteger os outros",
-            alternativaRevolucionarios: "Dedicar a vida a mudar o mundo",
+// contadores gerais
+var pontosPirata = 0;
+var pontosMarinha = 0;
+var pontosRevolucionario = 0;
 
-        },
+// função chamada ao clicar no botão
+function verificar() {
 
-        {
-            pergunta: 'Em uma situação de injustiça você tende a',
-            alternativaPirata: "Se colocar no lugar da pessoa e tomar uma ação",
-            alternativaMarinha: "Se colocar no lugar da pessoa e refletir sobre o porque aquela situação acontece",
-            alternativaRevolucionarios: "Apenas ajudo"
+    // zera os pontos
+    pontosPirata = 0;
+    pontosMarinha = 0;
+    pontosRevolucionario = 0;
 
-        },
-        {
-            pergunta: 'O que é mais importante para você?',
-            alternativaPirata: "Minha própria liberdade e dos que escolhem segui-la",
-            alternativaMarinha: "A proteção das pessoas e manutenção da ordem",
-            alternativaRevolucionarios: "Garantir justiça para os oprimidos, mesmo contra a ordem"
-
-        },
-        {
-            pergunta: 'Você encontra um tesouro raro e valioso. O que faz com ele?',
-            alternativaPirata: "Uso para realizar meus sonhos",
-            alternativaMarinha: "Entrego para as autoridades",
-            alternativaRevolucionarios: "Uso para ajudar quem precisa",
-
-        },
-
-        {
-            pergunta: 'Como você enxerga a hierarquia?',
-            alternativaPirata: "Algo que limita quem sou",
-            alternativaMarinha: "Fundamental para manter ordem",
-            alternativaRevolucionarios: "Uma ferramenta — pode ser usada para o bem ou para o mal",
-
-        },
-        {
-            pergunta: 'Qual frase mais combina com você?',
-            alternativaPirata: "A justiça é soberana!",
-            alternativaMarinha: "A paz deve ser protegida",
-            alternativaRevolucionarios: "Quero viver minha vida livre",
-        },
-        {
-            pergunta: 'Você testemunha alguém sendo abusado por uma autoridade poderosa',
-            alternativaPirata: "O medo do caos que isso pode gerar",
-            alternativaMarinha: "A raiva por controlarem os outros",
-            alternativaRevolucionarios: "O senso de justiça negada",
-        },
-        {
-            pergunta: 'O mundo ideal seria…',
-            alternativaPirata: "Um onde todos sigam princípios e a paz seja mantida.",
-            alternativaMarinha: "Um onde todos tenham força e voz para mudar o que é errado.",
-            alternativaRevolucionarios: "Um onde cada pessoa busque seus sonhos sem restrições.",
-        },
-        {
-            pérgunta: 'O que você valoriza mais em sua tripulação / aliados?',
-            alternativaPirata: "Disciplina e hierarquia",
-            alternativaMarinha: "União pela causa e igualdade",
-            alternativaRevolucionarios: "Lealdade entre pessoas que escolheram estar juntas",
-        },
-        {
-            pergunta: 'Um superior lhe dá uma ordem que você considera moralmente errada. O que faz?',
-            alternativaPirata: "Cumpro — minha opinião não pode atrapalhar o bem maior.",
-            alternativaMarinha: "Questiono e, se necessário, desobedeço para impedir injustiças",
-            alternativaRevolucionarios: "Ignoro — quem manda em mim sou eu",
-        },
-        {
-            pergunta: 'Há um protesto na sua cidade contra o governo. Você…',
-            alternativaPirata: "Mantém distância e prioriza estabilidade e segurança",
-            alternativaMarinha: "Participa ativamente se acreditar na causa",
-            alternativaRevolucionarios: "Só iria se puder transformar em festa e aventura",
-        },
-        {
-            pergunta: 'Um negócio local está quase fechando:',
-            alternativaPirata: "Apoio se estiver dentro das regras e da lei",
-            alternativaMarinha: "Organizo uma campanha para salvar o comércio",
-            alternativaRevolucionarios: "Chamo geral para ir lá gastar junto e festejar",
-        },
-        {
-            pergunta: 'Um professor trata um aluno injustamente',
-            alternativaPirata: "Reporto aos responsáveis para corrigir a situação",
-            alternativaMarinha: "Defendo e protesto contra o tratamento injust",
-            alternativaRevolucionarios: "Peito o professor sem medo",
-        },
-        {
-            pergunta: 'Durante uma viagem, você precisa escolher sua rota:',
-            alternativaPirata: "A mais segura, para proteger todos a bordo",
-            alternativaMarinha: "A que leva a ajudar quem precisa, mesmo sendo difícil",
-            alternativaRevolucionarios: "A mais desafiadora e cheia de perigos — vale a aventura!",
-        },
-        {
-            pergunta: 'Sua família quer escolher seu futuro profissional',
-            alternativaPirata: "Tento conciliar o que quero com o que é esperado",
-            alternativaMarinha: "Provo que minha escolha pode gerar impacto positivo",
-            alternativaRevolucionarios: "Faço o que quero e pronto — minha vida, minhas regras",
-        }
-        //colocar alternativa das faccoes direto//
-    ];
-    var RespostasPirata = [
-        "Liberdade",
-        "Viver a vida em meio as ondas",
-        "Apenas ajudo",
-        "Minha própria liberdade e dos que escolhem segui-la",
-        "Uso para realizar meus sonhos",
-        "Algo que limita quem sou",
-        "Quero viver minha vida livre",
-        "A raiva por controlarem os outros",
-        "O senso de justiça negada",
-        "Um onde cada pessoa busque seus sonhos sem restrições.",
-        "Lealdade entre pessoas que escolheram estar juntas",
-        "Ignoro — quem manda em mim sou eu",
-        "Só iria se puder transformar em festa e aventura",
-        "Chamo geral para ir lá gastar junto e festejar",
-        "Peito o professor sem medo",
-        "A mais desafiadora e cheia de perigos — vale a aventura!",
-        "Faço o que quero e pronto — minha vida, minhas regras"
-
-
-    ];
-    var RespostasMarinha = [
-        "Justiça",
-        "Dedicar a vida a proteger os outros",
-        "Se colocar no lugar da pessoa e tomar uma ação",
-        "A proteção das pessoas e manutenção da ordem",
-        "Entrego para as autoridades",
-        "Fundamental para manter ordem",
-        "A paz deve ser protegida",
-        "O medo do caos que isso pode gerar",
-        "Um onde todos sigam princípios e a paz seja mantida.",
-        "Disciplina e hierarquia",
-        "Cumpro — minha opinião não pode atrapalhar o bem maior.",
-        "Mantém distância e prioriza estabilidade e segurança",
-        "Apoio se estiver dentro das regras e da lei",
-        "Reporto aos responsáveis para corrigir a situação",
-        "A mais segura, para proteger todos a bordo",
-        "Tento conciliar o que quero com o que é esperado"
-
-    ];
-    var RespostasRevolucionarios = [
-        "Altruimo",
-        "Dedicar a vida a mudar o mundo",
-        "Se colocar no lugar da pessoa e refletir sobre o porque aquela situação acontece",
-        "Garantir justiça para os oprimidos, mesmo contra a ordem",
-        "Uso para ajudar quem precisa",
-        "Uma ferramenta — pode ser usada para o bem ou para o mal",
-        "A justiça é soberana!",
-        "A raiva por controlarem os outros",
-        "A raiva por controlarem os outros",
-        "Um onde todos tenham força e voz para mudar o que é errado.",
-        "União pela causa e igualdade",
-        "Questiono e, se necessário, desobedeço para impedir injustiças",
-        "Participa ativamente se acreditar na causa",
-        "Organizo uma campanha para salvar o comércio",
-        "Defendo e protesto contra o tratamento injust",
-        "A que leva a ajudar quem precisa, mesmo sendo difícil",
-        "Provo que minha escolha pode gerar impacto positivo"
-
+    // pega todas as respostas dos selects
+    var respostasUsuario = [
+        select_q1.value, select_q2.value, select_q3.value, select_q4.value,
+        select_q5.value, select_q6.value, select_q7.value, select_q8.value,
+        select_q9.value, select_q10.value, select_q11.value, select_q12.value,
+        select_q13.value, select_q14.value, select_q15.value, select_q16.value,
+        select_q17.value
     ];
 
+    // classifica cada resposta
+    respostasUsuario.forEach(function(resposta) {
 
-    var resposta = [0, 0, 0]; // [pirata, marinha, revolucionário]
-
-
-
-    function verificar() {
-
-        if (resposta == alternativaPirata) {
-            resposta[0] = resposta[0] + 1;
+      
+        if (
+            resposta == Perguntas[0].alternativas[0] ||
+            resposta == Perguntas[1].alternativas[0] ||
+            resposta == Perguntas[2].alternativas[0] ||
+            resposta == Perguntas[3].alternativas[0] ||
+            resposta == Perguntas[4].alternativas[0] ||
+            resposta == Perguntas[5].alternativas[0] ||
+            resposta == Perguntas[6].alternativas[0] ||
+            resposta == Perguntas[7].alternativas[0] ||
+            resposta == Perguntas[8].alternativas[0] ||
+            resposta == Perguntas[9].alternativas[0] ||
+            resposta == Perguntas[10].alternativas[0] ||
+            resposta == Perguntas[11].alternativas[0] ||
+            resposta == Perguntas[12].alternativas[0] ||
+            resposta == Perguntas[13].alternativas[0] ||
+            resposta == Perguntas[14].alternativas[0] ||
+            resposta == Perguntas[15].alternativas[0] ||
+            resposta == Perguntas[16].alternativas[0]
+        ) {
+            pontosPirata++;
         }
-        else if (resposta == alternativaMarinha) {
-            resposta[1] = resposta[1] + 1;
-        }
-        else if (resposta == alternativaRevolucionarios) {
-            resposta[2] = resposta[2] + 1;
+
+        
+        else if (
+            resposta == Perguntas[0].alternativas[1] ||
+            resposta == Perguntas[1].alternativas[1] ||
+            resposta == Perguntas[2].alternativas[1] ||
+            resposta == Perguntas[3].alternativas[1] ||
+            resposta == Perguntas[4].alternativas[1] ||
+            resposta == Perguntas[5].alternativas[1] ||
+            resposta == Perguntas[6].alternativas[1] ||
+            resposta == Perguntas[7].alternativas[1] ||
+            resposta == Perguntas[8].alternativas[1] ||
+            resposta == Perguntas[9].alternativas[1] ||
+            resposta == Perguntas[10].alternativas[1] ||
+            resposta == Perguntas[11].alternativas[1] ||
+            resposta == Perguntas[12].alternativas[1] ||
+            resposta == Perguntas[13].alternativas[1] ||
+            resposta == Perguntas[14].alternativas[1] ||
+            resposta == Perguntas[15].alternativas[1] ||
+            resposta == Perguntas[16].alternativas[1]
+        ) {
+            pontosMarinha++;
         }
 
-
-        if (resposta[0] > resposta[1, 2]) {
-            mensagem = 'Você é pirata'
-        }
-        else if (resposta[1] > resposta[0, 2]) {
-            mensagem = 'Você é da Marinha'
-        }
+        
         else {
-            mensagem = 'Você é Revolucionario'
+            pontosRevolucionario++;
         }
+    });
+
+    // mostra o resultado pro usuário
+    var resultado = "";
+
+    if (pontosPirata > pontosMarinha && pontosPirata > pontosRevolucionario) {
+        resultado = "Você é PIRATA!";
     }
+    else if (pontosMarinha > pontosPirata && pontosMarinha > pontosRevolucionario) {
+        resultado = "Você é da MARINHA!";
+    }
+    else {
+        resultado = "Você é REVOLUCIONÁRIO!";
+    }
+
+    div_mensagem.innerHTML = resultado;
+
+    // manda para o backend gravar a tentativa
+    fetch("/tentativa/registrar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            fkUsuario: sessionStorage.ID_USUARIO,
+            fkQuiz: 1,
+            alternativaPirata: pontosPirata,
+            alternativaMarinha: pontosMarinha,
+            alternativaRevolucionarios: pontosRevolucionario
+        })
+    })
+    .then(function(r) {
+        console.log("Tentativa registrada.");
+    })
+    .catch(function(e) {
+        console.log("Erro ao registrar:", e);
+    });
+}
+
 
 
 

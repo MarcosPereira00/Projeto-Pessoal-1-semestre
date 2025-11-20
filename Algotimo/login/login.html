@@ -61,10 +61,7 @@
   </body>
 </html>
 <script>
-
-
-    function entrar() {
-        aguardar();
+   function logar(){
 
         var emailVar = input_email.value;
         var senhaVar = input_senha.value;
@@ -72,7 +69,7 @@
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            finalizarAguardar();
+            
             return false;
         }
         else {
@@ -102,12 +99,14 @@
                     console.log(JSON.stringify(json));
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
+
+                    
                     
 
-                    setTimeout(function () {
+                   /* setTimeout(function () {
                         window.location = "./dashboard/cards.html";
-                    }, 1000); // apenas para exibir o loading
+                    }, 1000); // apenas para exibir o loading */
 
                 });
 
@@ -117,7 +116,7 @@
 
                 resposta.text().then(texto => {
                     console.error(texto);
-                    finalizarAguardar(texto);
+                    
                 });
             }
 

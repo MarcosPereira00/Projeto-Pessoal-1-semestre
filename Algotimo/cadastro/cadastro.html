@@ -88,9 +88,10 @@
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo ** Colocar as minhas inputs
     var nomeVar = input_nome.value;
+    var sobrenomeVar = input_sobrenome.value;
     var emailVar = input_email.value;
     var senhaVar = input_senha.value;
-    var confirmacaoSenhaVar = confirmacao_input_senha.value;
+    var confirmacaoSenhaVar = input_confirmarsenha.value;
     
 
     // Verificando se há algum campo em branco
@@ -104,13 +105,13 @@
       mensagem_erro.innerHTML =
         "(Mensagem de erro para todos os campos em branco)";
 
-      finalizarAguardar();
+     /* finalizarAguardar();
       return false;
     } else {
       setInterval(sumirMensagem, 5000);
-    }
+    } */
 
-    // Verificando se o código de ativação é de alguma empresa cadastrada
+    /* Verificando se o código de ativação é de alguma empresa cadastrada*/
     /*
     for (let i = 0; i < listaUsuarioCadastrado.length; i++) {
       if (listaUsuarioCadastrado[i].codigo_ativacao == codigoVar) {
@@ -125,7 +126,7 @@
     }*/
 
     // Enviando o valor da nova input * colocar as minhas variaveis
-    fetch("/usuarios/cadastrar", {
+    fetch("/usuario/cadastrar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -134,9 +135,10 @@
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
+        sobrenomeServer : sobrenomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        idEmpresaVincularServer: idEmpresaVincular
+        
       }),
     })
     // colocar a minha div de erro
@@ -150,18 +152,17 @@
             "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
           setTimeout(() => {
-            window.location = "login.html";
+            window.location = "../login/login.html";
           }, "2000");
 
-          limparFormulario();
-          finalizarAguardar();
+         
         } else {
           throw "Houve um erro ao tentar realizar o cadastro!";
         }
       })
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
+      ;
       });
       ProjetoPessoal;
     return false;
@@ -170,4 +171,5 @@
   function sumirMensagem() {
     cardErro.style.display = "none";
   }
+}
 </script>
