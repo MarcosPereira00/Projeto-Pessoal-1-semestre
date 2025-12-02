@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro</title>
     <link rel="stylesheet" href="cadastro.css">
-    <script src="./js/sessao.js"></script>
+    <!-- <script src="../js/sessao.js"></script> -->
     
 </head>
 
@@ -15,6 +15,12 @@
         <a style="align-self: flex-start;" href="../tela inicial/telainicial.html">← Voltar Home</a>
     <div class="container">
        
+      <div class="login">
+    <div class="alerta_erro">
+      <div class="card_erro" id="cardErro">
+        <span id="mensagem_erro"></span>
+      </div>
+    </div>
         <br>
         <br>
         <h3>CADASTRO</h3>
@@ -24,40 +30,26 @@
                 <div class="ladoEsquerdo">
                     <div class="caixaInput">
                         <p class="cabecalho">Nome</p>
-                        <input type="text" placeholder="Digite seu nome" id="input_nome" oninput="cadastrarNome()" />
+                        <input type="text" placeholder="Digite seu nome" id="input_nome"/>
                         <p id="erro_nome"></p>
+                    </div>
+                      <div class="caixaInput">
+                        <p class="cabecalho">Sobrenome</p>
+                        <input type="text" placeholder="Digite seu sobrenome" id="input_sobrenome"/>
+                        <p id="erro_sobrenome"></p>
                     </div>
                     
                     <div class="caixaInput">
                         <p class="cabecalho">Email</p>
-                        <input type="text" placeholder="Insira seu email" id="input_email" oninput="cadastrarEmail()" />
+                        <input type="text" placeholder="Insira seu email" id="input_email"/>
                         <p id="erro_email"></p>
-                    </div>
-                    <div class="caixaInput">
-                        <p class="cabecalho">Nascimento</p>
-                        <input type="text" placeholder="Insira sua data de nascimento" id="input_nascimento" oninput="cadastrarNascimento()" />
-                        <p id="erro_nascimento"></p>
                     </div>
                     
                     <div class="caixaInput">
                         <p class="cabecalho">Senha</p>
-                        <input type="password" placeholder="Insira uma senha" id="input_senha" oninput="cadastrarSenha()" />
-                        <p id="erro_senha1"></p>
-                        <p id="erro_senha2"></p>
-                        <p id="erro_senha3"></p>
-                    </div>
-                    <div class="caixaInput">
-                        <p class="cabecalho">Confirmar Senha</p>
-                        <input type="password" placeholder="Confirme sua senha" id="input_confirmarsenha"
-                            oninput="cadastrarConfirmarSenha()" />
-                        <p id="erro_confirmarsenha"></p>
+                        <input type="password" placeholder="Insira uma senha" id="input_senha"/>
                     </div>  
                 </div>
-                     <div class="caixaInput">
-                        <p class="cabecalho">Telefone</p>
-                        <input type="text" placeholder="Insira seu telefone" id="input_telefone" oninput="cadastrarTelefone()" />
-                        <p id="erro_telefone"></p>
-                    </div> 
     
                 </div>
             </div>
@@ -66,6 +58,8 @@
             <br>
             <button id="button_cadastrar" onclick="cadastrar()">CADASTRAR</button>
             <p id="erro_confirmarcadastro"></p>
+            <br>
+            <div id="div_erros_login"></div>
             <br>
             <a href="login.html">LOGIN </a>
         </div>
@@ -91,19 +85,19 @@
     var sobrenomeVar = input_sobrenome.value;
     var emailVar = input_email.value;
     var senhaVar = input_senha.value;
-    var confirmacaoSenhaVar = input_confirmarsenha.value;
+    
     
 
     // Verificando se há algum campo em branco
     if (
       nomeVar == "" ||
       emailVar == "" ||
-      senhaVar == "" ||
-      confirmacaoSenhaVar == "" 
+      senhaVar == "" 
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "(Mensagem de erro para todos os campos em branco)";
+    }
 
      /* finalizarAguardar();
       return false;
@@ -164,12 +158,12 @@
         console.log(`#ERRO: ${resposta}`);
       ;
       });
-      ProjetoPessoal;
+      
     return false;
   }
 
   function sumirMensagem() {
     cardErro.style.display = "none";
   }
-}
+  
 </script>

@@ -9,158 +9,159 @@
 </head>
 
 <body>
-    <header>
-        <div class="container-pai">
-            <img src="logoGear5.png" height="75px" width="75px" alt="Logo Gear 5" />
-            <ul class="navbar">
-                <li><a href="#h1_sobre">Sobre o Anime</a></li>
-                <li><a href="#h1_Faccoes">Facções</a></li>
-                <li><a href="#h1_calculadora">Quiz</a></li>
-                <li><a href="../login/login.html">Login</a></li>
-            </ul>
-        </div>
-    </header>
-
     <div class="container">
 
-        <div class="top-questions">
-            <h1>Bem-vindo ao One Piece Quiz</h1>
-            <h2>Vamos Jogar?</h2>
-            <h2>Serão exibidas questões para descobrir sua justiça!</h2>
+        <div class="titulo">
+            <h1>Bem-vindo ao One Piece Quiz<br>Serão exibidas questões para descobrir sua justiça!</h1>
+
         </div>
 
         <div id="pergunta_container">
-            <h3 id="div_mensagem">Carregando pergunta...</h3>
+            <h2 id="div_mensagem">Carregando pergunta...</h2>
 
             <div class="respostas">
-                <select id="select_resposta"></select>
+                <button id="botao1" onclick="selecionarResposta(0)"></button>
+                <button id="botao2" onclick="selecionarResposta(1)"></button>
+                <button id="botao3" onclick="selecionarResposta(2)"></button>
             </div>
+
         </div>
 
         <br>
+        <div class="botao">
+            <button class="botao4" onclick="verificar()">Confirmar Resposta</button><br><br>
+            <button class="botao5" onclick="proxima()">Próxima Pergunta</button>
+        </div>
 
-        <button onclick="verificar()">Confirmar Resposta</button><br><br>
-        <button onclick="proxima()">Próxima Pergunta</button>
-
-        
         <div id="resultado_final" style="margin-top: 40px; font-size: 28px; font-weight: bold;"></div>
 
     </div>
 
 </body>
+
 </html>
 <script>
 
-var Perguntas = [
-    { pergunta: "Dentre as virtudes, qual você mais preza?", alternativas: ["Liberdade", "Justiça", "Altruismo"] },
-    { pergunta: "Em uma jornada pelos mares como One Piece, você prefere?", alternativas: ["Viver a vida em meio as ondas", "Dedicar a vida a proteger os outros", "Dedicar a vida a mudar o mundo"] },
-    { pergunta: "Qual parte da vida mais de te agrada?", alternativas: ["A presença e companhia da familia", "A aventura da vida", "Tentar melhorar para as proximas gerações"] },
-    { pergunta: "Em uma situação de injustiça você tende a", alternativas: ["Se colocar no lugar da pessoa e tomar uma ação", "Se colocar no lugar da pessoa e refletir sobre o porque aquela situação acontece", "Apenas ajudar"] },
-    { pergunta: "O que é mais importante para você?", alternativas: ["Minha própria liberdade e dos que escolhem segui-la", "A proteção das pessoas e manutenção da ordem", "Garantir justiça para os oprimidos, mesmo contra a ordem"] },
-    { pergunta: "Você encontra um tesouro raro e valioso. O que faz com ele?", alternativas: ["Uso para realizar meus sonhos", "Entrego para as autoridades", "Uso para ajudar quem precisa"] },
-    { pergunta: "Como você enxerga a hierarquia?", alternativas: ["Algo que limita quem sou", "Fundamental para manter ordem", "Uma ferramenta — pode ser usada para o bem ou para o mal"] },
-    { pergunta: "Qual frase mais combina com você?", alternativas: ["A justiça é soberana!", "A paz deve ser protegida.", "Quero viver minha vida livre"] },
-    { pergunta: "Você testemunha alguém sendo abusado por uma autoridade poderosa", alternativas: ["O medo do caos que isso pode gerar", "A raiva por controlarem os outros", "O senso de justiça negada"] },
-    { pergunta: "O mundo ideal seria…", alternativas: ["Um onde todos sigam princípios e a paz seja mantida.", "Um onde todos tenham força e voz para mudar o que é errado.", "Um onde cada pessoa busque seus sonhos sem restrições."] },
-    { pergunta: "O que você valoriza mais em sua tripulação / aliados?", alternativas: ["Disciplina e hierarquia", "União pela causa e igualdade", "Lealdade entre pessoas que escolheram estar juntas"] },
-    { pergunta: "Um superior lhe dá uma ordem que você considera moralmente errada. O que faz?", alternativas: ["Cumpro — minha opinião não pode atrapalhar o bem maior.", "Questiono e, se necessário, desobedeço para impedir injustiças.", "Ignoro — quem manda em mim sou eu"] },
-    { pergunta: "Há um protesto na sua cidade contra o governo. Você…", alternativas: ["Mantém distância e prioriza estabilidade e segurança.", "Participa ativamente se acreditar na causa.", "Só iria se puder transformar em festa e aventura"] },
-    { pergunta: "Um negócio local está quase fechando:", alternativas: ["Apoio se estiver dentro das regras e da lei", "Organizo uma campanha para salvar o comércio", "Chamo geral para ir lá gastar junto e festejar"] },
-    { pergunta: "Um professor trata um aluno injustamente:", alternativas: ["Reporto aos responsáveis para corrigir a situação", "Defendo e protesto contra o tratamento injusto", "Peito o professor sem medo"] },
-    { pergunta: "Durante uma viagem, você precisa escolher sua rota:", alternativas: ["A mais segura, para proteger todos a bordo", "A que leva a ajudar quem precisa, mesmo sendo difícil", "A mais desafiadora e cheia de perigos — vale a aventura!"] },
-    { pergunta: "Sua família quer escolher seu futuro profissional", alternativas: ["Tento conciliar o que quero com o que é esperado", "Provo que minha escolha pode gerar impacto positivo", "Faço o que quero e pronto — minha vida, minhas regras"] }
-];
+    var Perguntas = [
+        { pergunta: "Dentre as virtudes, qual você mais preza?", alternativas: ["Liberdade", "Justiça", "Altruismo"] },
+        { pergunta: "Em uma jornada pelos mares como One Piece, você prefere?", alternativas: ["Viver a vida em meio as ondas", "Dedicar a vida a proteger os outros", "Dedicar a vida a mudar o mundo"] },
+        { pergunta: "Qual parte da vida mais de te agrada?", alternativas: ["A aventura da vida", "A presença e companhia da familia", "Tentar melhorar para as proximas gerações"] },
+        { pergunta: "Em uma situação de injustiça você tende a", alternativas: ["Apenas ajudar", "Se colocar no lugar da pessoa e tomar uma ação", "Se colocar no lugar da pessoa e refletir sobre o porque aquela situação acontece"] },
+        { pergunta: "O que é mais importante para você?", alternativas: ["Minha própria liberdade", "A proteção das pessoas e manutenção da ordem", "Garantir justiça para os oprimidos, mesmo contra a ordem"] },
+        { pergunta: "Você encontra um tesouro. O que faz com ele?", alternativas: ["Uso para realizar meus sonhos", "Entrego para as autoridades", "Uso para ajudar quem precisa"] },
+        { pergunta: "Como você enxerga a hierarquia?", alternativas: ["Algo que limita quem sou", "Fundamental para manter ordem", "Algo pode ser usada para o bem ou para o mal"] },
+        { pergunta: "Qual frase mais combina com você?", alternativas: ["Quero viver minha vida livre", "A paz deve ser protegida.", "A justiça é soberana!"] },
+        { pergunta: "Você testemunha alguém sendo abusado por uma autoridade", alternativas: ["A raiva por controlarem os outros", "O medo do caos que isso pode gerar", "O senso de justiça negada"] },
+        { pergunta: "O mundo ideal seria…", alternativas: ["Um onde cada pessoa busque seus sonhos sem restrições", "Um onde todos sigam as regras e a paz seja mantida.", "Um onde todos tenham força e voz para mudar o que é errado"] },
+        { pergunta: "O que você valoriza mais em sua tripulação / aliados?", alternativas: ["Lealdade entre pessoas que escolheram estar juntas", "Disciplina e hierarquia", "União pela causa e igualdade"] },
+        { pergunta: "Um superior lhe dá uma ordem que você considera moralmente errada. O que faz?", alternativas: ["Ignoro porque sou dono da minha própria liberdade", "Cumpro, meus valores não pode atrapalhar o bem maior.", "Questiono e, se necessário, desobedeço para impedir injustiças."] },
+        { pergunta: "Há um protesto na sua cidade contra o governo. Você…", alternativas: ["Só iria se afetar a mim e a minha tripulação/aliados", "Mantém distância e prioriza estabilidade e segurança.", "Participa se acreditar na causa."] },
+        { pergunta: "Um negócio local está quase fechando:", alternativas: ["Chamo geral para ir lá gastar junto e festejar", "Apoio se estiver dentro das regras e da lei", "Organizo uma campanha para salvar o comércio"] },
+        { pergunta: "Um professor trata um aluno injustamente:", alternativas: ["Peito o professor sem medo", "Reporto aos responsáveis para corrigir a situação", "Defendo e protesto contra o tratamento injusto"] },
+        { pergunta: "Durante uma viagem, você precisa escolher sua rota:", alternativas: ["A mais desafiadora e cheia de perigos porque a aventura faz valer a pena!", "A mais segura, para proteger todos a bordo", "A que leva a ajudar quem precisa, mesmo sendo difícil"] },
+        { pergunta: "Sua família quer escolher seu futuro profissional", alternativas: ["Faço o que quero pois sou dono da minha liberdade", "Tento conciliar o que quero com o que é esperado", "Provo que minha escolha pode gerar impacto positivo"] }
+    ];
 
+    var pontosPirata = 0;
+    var pontosMarinha = 0;
+    var pontosRevolucionario = 0;
+    var perguntaAtual = 0;
 
-var pontosPirata = 0;
-var pontosMarinha = 0;
-var pontosRevolucionario = 0;
-var perguntaAtual = 0;
+    var respostaSelecionada = null;
 
-function mostrarPergunta() {
-    var atual = Perguntas[perguntaAtual];
-
-   
-     div_mensagem.innerHTML = atual.pergunta;
-
-
-    select_resposta.innerHTML = `
-        <option value="0">${atual.alternativas[0]}</option>
-        <option value="1">${atual.alternativas[1]}</option>
-        <option value="2">${atual.alternativas[2]}</option>
-    `;
+    if (sessionStorage.ID_USUARIO == undefined) {
+    alert("Você precisa estar logado para acessar o quiz!");
+    window.location = "../login/login.html";
 }
 
 
-function verificar() {
-var respostas = Number(select_resposta.value);
+    function mostrarPergunta() {
+        var atual = Perguntas[perguntaAtual];
 
-if(respostas === 0){
-    pontosPirata++
-}else if(respostas === 1){
-    pontosMarinha++
-}else pontosRevolucionario++
+        div_mensagem.innerHTML = atual.pergunta;
 
-proxima();
+        botao1.innerHTML = atual.alternativas[0];
+        botao2.innerHTML = atual.alternativas[1];
+        botao3.innerHTML = atual.alternativas[2];
 
-}
- 
-
-function proxima() {
-    perguntaAtual++;
-
-    if (perguntaAtual < Perguntas.length) {
-        mostrarPergunta();
-    } else {
-        finalizarQuiz();
-    }
-}
-
-/* ==========================
-   FINALIZAÇÃO DO QUIZ
-========================== */
-
-function finalizarQuiz() {
-    document.getElementById("pergunta_container").style.display = "none";
-
-    let resultado = "";
-
-    if (pontosPirata > pontosMarinha && pontosPirata > pontosRevolucionario) {
-        resultado = "Você é PIRATA!";
-    } else if (pontosMarinha > pontosPirata && pontosMarinha > pontosRevolucionario) {
-        resultado = "Você é da MARINHA!";
-    } else {
-        resultado = "Você é REVOLUCIONÁRIO!";
+        respostaSelecionada = null;
     }
 
-    resultado_final.innerHTML = resultado;
+    function selecionarResposta(valor) {
+        respostaSelecionada = valor;
+    }
 
-    // Enviar para o backend
-    fetch("/tentativa/registrar", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            fkUsuario: sessionStorage.ID_USUARIO,
-            fkQuiz: 1,
-            alternativaPirata: pontosPirata,
-            alternativaMarinha: pontosMarinha,
-            alternativaRevolucionarios: pontosRevolucionario
+    function verificar() {
+
+        if (respostaSelecionada === null) {
+            alert("Escolha uma resposta primeiro!");
+            return;
+        }
+
+        if (respostaSelecionada === 0) {
+            pontosPirata++;
+        } 
+        else if (respostaSelecionada === 1) {
+            pontosMarinha++;
+        } 
+        else {
+            pontosRevolucionario++;
+        }
+
+        proxima();
+    }
+
+    function proxima() {
+        perguntaAtual++;
+
+        if (perguntaAtual < Perguntas.length) {
+            mostrarPergunta();
+        } else {
+            finalizarQuiz();
+        }
+    }
+
+    function finalizarQuiz() {
+        document.getElementById("pergunta_container").style.display = "none";
+
+        var resultado = "";
+
+        if (pontosPirata > pontosMarinha && pontosPirata > pontosRevolucionario) {
+            resultado = `Você é PIRATA! A sua justiça está ligada a liberdade,
+            você leva a vida como uma aventura e leve como o balançar das ondas`;
+        } 
+        else if (pontosMarinha > pontosPirata && pontosMarinha > pontosRevolucionario) {
+            resultado = `Você é da MARINHA! A sua justiça está ligada a proteção dos mais fracos,
+            para você manter a ordem e hierarquia é vital para o funcionamento em sociedade`;
+        } 
+        else {
+            resultado = `Você é REVOLUCIONÁRIO! A sua justiça está fortemente ligada a questão social,
+            onde a injustiças são algo que te afeta profundamente. Você é mudança.`;
+        }
+
+        resultado_final.innerHTML = resultado;
+        console.log("ID USUÁRIO:", sessionStorage.ID_USUARIO);
+
+
+        fetch("/tentativa/registrar", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                fkUsuarios: sessionStorage.ID_USUARIO,
+                fkQuiz: 1,
+                alternativaPirata: pontosPirata,
+                alternativaMarinha: pontosMarinha,
+                alternativaRevolucionarios: pontosRevolucionario
+            })
         })
+        .then(r => r.json())
+        .then(r => {console.log("Tentativa registrada:", r);
+        
+         window.location.href = "../dashboard/dashboard.html";
     })
-    .then(r => r.json())
-    .then(r => console.log("Tentativa registrada:", r))
-    .catch(e => console.error("Erro ao registrar:", e));
-}
+        .catch(e => console.error("Erro ao registrar:", e));
+    }
 
-/* ==========================
-   INICIAR QUIZ
-========================== */
-
-window.onload = mostrarPergunta;
-
-
-
-
-
+    window.onload = mostrarPergunta;
 
 </script>

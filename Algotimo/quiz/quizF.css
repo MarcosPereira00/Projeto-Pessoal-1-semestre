@@ -1,21 +1,92 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat';
+body{
+    background-image:url('KingvsZoro.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-header .container{
-    display: flex;
-    background-color: rgb(37, 46, 73);
-    backdrop-filter: blur(10px);
-    justify-content: space-between;
-    padding: 0 20px;
-    align-items: center;
-    height: 75px;
-    position: fixed;
+
+.titulo{
+    background: #fff;
+    width: 90%;
+    max-width: 780px;
+    margin: 20px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.titulo h1{
+    font-size: 26px;
+    font-weight: 600;
+    border-bottom: 1px solid #333;
+    padding-bottom: 25px;
+}
+
+.container{
+    background: #fff;
+    color: #222;
+    font-weight: 500;
+    width: 650px;   
+    max-width: 92%;
+    border: 1px solid #222;
+    margin: 60px auto;
+    text-align: center;
+    border-radius: 8px;
+    padding: 35px;
+    box-sizing: border-box;
+} 
+
+.respostas{
+    background-color: #fff;
+    color:#222;
+    font-weight: 500;
     width: 100%;
-    
-    
-}
-header .container .navabar{
+    border: 1px solid #222;
+    padding: 20px;
+    margin: 25px auto;
+    border-radius: 8px;
     display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+
+.respostas button{
+    width: 100%;
+    max-width: 420px;
+    padding: 15px;
+    font-size: 17px;
+    border-radius: 8px;
+    border: 1px solid #222;
+    cursor: pointer;
+    background-color: #f2f2f2;
+
+    transition: background-color 0.35s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.respostas button:hover{
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+
+.respostas button:focus{
+    background-color: #b9fbc0;  
+    box-shadow: 0 0 12px rgba(0, 180, 0, 0.5);
+    outline: none;
+}
+
+
+.botao{
+    margin-top: 30px;
+}
+
+.botao button{
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
 }

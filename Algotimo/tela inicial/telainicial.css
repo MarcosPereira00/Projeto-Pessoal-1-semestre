@@ -30,7 +30,7 @@ header .container .navbar li{
 }
 header .container .navbar li a{
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 
@@ -62,7 +62,7 @@ html{
     flex-direction: column;
     align-items: center;
     padding: 100px;
-    color: bold black;
+    color: white;
     
 }
 
@@ -209,6 +209,7 @@ body .sobreOnePiece img{
     background-size: cover;
     height: 150px;
     width: 345px;
+    color: white;
 }
 .comofunciona .comofunciona-banner .boxes .box2 {
     text-align: center;
@@ -218,6 +219,7 @@ body .sobreOnePiece img{
     background-size: cover;
     height: 150px;
     width: 345px;
+    color: white;
 }
 .comofunciona .comofunciona-banner .boxes .box3 {
     text-align: center;
@@ -227,6 +229,7 @@ body .sobreOnePiece img{
     background-size: cover;
     height: 150px;
     width: 345px;
+    color: white;
 }
 .comofunciona .comofunciona-banner .boxes .box4 {
     text-align: center;
@@ -236,6 +239,7 @@ body .sobreOnePiece img{
     background-size: cover;
     height: 150px;
     width: 345px;
+    color: white;
 }
 .comofunciona .comofunciona-banner .boxes .box p{
     text-align: center;
@@ -409,7 +413,7 @@ body .sobreOnePiece img{
 /* COMECO FORMULARIO */
 
 
-.formulario{
+/* .formulario{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -474,12 +478,12 @@ body .sobreOnePiece img{
     transition: 0.5s;
     color: black;
     cursor: pointer;
-}
+} */
 /* FIM FORMULARIO */
 
 /* INICIO FOOTER */
 
-footer{
+/* footer{
     display: flex;
     background-color: #F7C53A;
     justify-content: space-between;
@@ -513,4 +517,4 @@ footer .textos .texto{
 
 footer .textos .texto p{
     margin: 20px 50px 0;
-}
+} */
