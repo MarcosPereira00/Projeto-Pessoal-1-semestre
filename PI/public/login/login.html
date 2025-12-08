@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <script src="./js/sessao.js"></script>  -->
+    
+  </head>
+
+  <body>
+    <div class="container-pai">
+      <header>
+    <div class="container">
+      </a>
+      <ul class="navbar">
+        <li><a href="../tela inicial/telainicial.html">Voltar para a página inicial</a></li>
+
+      </ul>
+    </div>
+  </header>
+  <div class="main">
+     <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
+      <div class="container">
+        <h3>LOGIN</h3>
+        <div class="campos">
+          <div class="dados">
+            <div class="caixa_input">
+              <h3>Usuário:</h3>
+              <input
+                type="text"
+                placeholder="Insira seu email"
+                id="input_email"
+              />
+            </div>
+
+            <div class="caixaInput">
+              <h3>Senha:</h3>
+              <input
+                type="password"
+                placeholder="Insira sua senha"
+                id="input_senha"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="div_button">
+          <button onclick="logar()">Logar</button>
+          <p id="div_mensagem"></p>
+          <a href="../cadastro/cadastro.html"><label for="">Cadastro</label></a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </body>
+ 
+</html>
+<script>
+
+
+    function logar(){
+
+        var emailVar = input_email.value;
+        var senhaVar = input_senha.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuario/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
+
+                    
+                    
+
+                    setTimeout(function () {
+                        window.location = "../quiz/quizF.html";
+                    }, 1000); // apenas para exibir o loading */
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>

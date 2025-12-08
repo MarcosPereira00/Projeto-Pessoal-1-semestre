@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>One Piece Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../dashboard/dashboard.css">
+</head>
+
+<body>
+
+    <h2>One Piece Dashboard</h2>
+    <p>Bem-vindo, <span id="b_usuario"></span></p>
+
+
+    <div class="container-kpi">
+        <div class="kpi1">
+            <h3>Facção Mais Escolhida</h3>
+            <p id="kpi_mais"></p>
+        </div>
+
+        <div class="kpi2">
+            <h3>Facção Menos Escolhida</h3>
+            <p id="kpi_menos"></p>
+        </div>
+
+        <div class="kpi3">
+            <h3>Total de Tentativas</h3>
+            <p id="kpi_total"></p>
+        </div>
+    </div>
+
+
+    <div class="graficos">
+        <div class="grafico1">
+            <h3>Distribuição das Facções</h3>
+            <canvas id="grafico-1"></canvas>
+        </div>
+
+        <div class="grafico-2">
+            <h3>Média de respostas por facção</h3>
+            <canvas id="grafico-2"></canvas>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+
+    fetch("/tentativa/contagemUsuarios")
+        .then(res => res.json())
+        .then(dados => {
+
+            let pirata = dados.pirata;
+            let marinha = dados.marinha;
+            let revolucionario = dados.revolucionario;
+
+
+            let maior = Math.max(pirata, marinha, revolucionario);
+            let menor = Math.min(pirata, marinha, revolucionario);
+
+            if (maior == pirata) kpi_mais.innerHTML = "Pirata";
+            else if (maior == marinha) kpi_mais.innerHTML = "Marinha";
+            else kpi_mais.innerHTML = "Revolucionário";
+
+            if (menor == pirata) kpi_menos.innerHTML = "Pirata";
+            else if (menor == marinha) kpi_menos.innerHTML = "Marinha";
+            else kpi_menos.innerHTML = "Revolucionário";
+
+            fetch("/dashboard/total-tentativas")
+                .then(res => res.json())
+                .then(dados => {
+                    kpi_total.innerHTML = dados.total;
+                });
+
+
+
+            const ctx = document.getElementById("grafico-1");
+            new Chart(ctx, {
+                type: "bar",
+                data: {
+                    labels: ["Pirata", "Marinha", "Revolucionário"],
+                    datasets: [{
+                        label: "Quais facções mais escolhidas",
+                        data: [pirata, marinha, revolucionario]
+                    }]
+                }
+            });
+
+        });
+
+    fetch("/dashboard/media-por-faccao")
+        .then(res => res.json())
+        .then(dados => {
+
+            let pirata = Number(dados.pirata);
+            let marinha = Number(dados.marinha);
+            let revolucionario = Number(dados.revolucionario);
+
+            const ctx2 = document.getElementById("grafico-2");
+
+            new Chart(ctx2, {
+                type: "bar",
+                data: {
+                    labels: ["Pirata", "Marinha", "Revolucionário"],
+                    datasets: [{
+                        label: "Quais respostas os usuarios mais se identificam",
+                        data: [pirata, marinha, revolucionario]
+                    }]
+                },
+             options: {
+            indexAxis: "y"
+        }
+            
+            });
+
+
+        });
+
+</script>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="cadastro.css">
+    <!-- <script src="../js/sessao.js"></script> -->
+    
+</head>
+
+<body>
+    <div class="container-pai">
+        <a style="align-self: flex-start;" href="../tela inicial/telainicial.html">← Voltar Home</a>
+    <div class="container">
+       
+      <div class="login">
+    <div class="alerta_erro">
+      <div class="card_erro" id="cardErro">
+        <span id="mensagem_erro"></span>
+      </div>
+    </div>
+        <br>
+        <br>
+        <h3>CADASTRO</h3>
+        <br>
+        <div class="container-campos">
+            <div class="campos">
+                <div class="ladoEsquerdo">
+                    <div class="caixaInput">
+                        <p class="cabecalho">Nome</p>
+                        <input type="text" placeholder="Digite seu nome" id="input_nome"/>
+                        <p id="erro_nome"></p>
+                    </div>
+                      <div class="caixaInput">
+                        <p class="cabecalho">Sobrenome</p>
+                        <input type="text" placeholder="Digite seu sobrenome" id="input_sobrenome"/>
+                        <p id="erro_sobrenome"></p>
+                    </div>
+                    
+                    <div class="caixaInput">
+                        <p class="cabecalho">Email</p>
+                        <input type="text" placeholder="Insira seu email" id="input_email"/>
+                        <p id="erro_email"></p>
+                    </div>
+                    
+                    <div class="caixaInput">
+                        <p class="cabecalho">Senha</p>
+                        <input type="password" placeholder="Insira uma senha" id="input_senha"/>
+                    </div>  
+                </div>
+    
+                </div>
+            </div>
+        </div>
+        <div class="div_button">
+            <br>
+            <button id="button_cadastrar" onclick="cadastrar()">CADASTRAR</button>
+            <p id="erro_confirmarcadastro"></p>
+            <br>
+            <div id="div_erros_login"></div>
+            <br>
+            <a href="login.html">LOGIN </a>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>
+
+
+<script>
+
+  
+  let listaUsuarioCadastrado = [];
+
+  function cadastrar() {
+    // aguardar();
+
+   
+    var nomeVar = input_nome.value;
+    var sobrenomeVar = input_sobrenome.value;
+    var emailVar = input_email.value;
+    var senhaVar = input_senha.value;
+    
+    
+
+    
+    if (
+      nomeVar == "" ||
+      emailVar == "" ||
+      senhaVar == "" 
+    ) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Mensagem de erro para todos os campos em branco)";
+    }
+
+    fetch("/usuario/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        
+       
+        nomeServer: nomeVar,
+        sobrenomeServer : sobrenomeVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+        
+      }),
+    })
+    // colocar a minha div de erro
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          cardErro.style.display = "block";
+
+          mensagem_erro.innerHTML =
+            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+          setTimeout(() => {
+            window.location = "../login/login.html";
+          }, "2000");
+
+         
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      ;
+      });
+      
+    return false;
+  }
+
+  function sumirMensagem() {
+    cardErro.style.display = "none";
+  }
+  
+</script>
